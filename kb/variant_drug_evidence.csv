@@ -1,0 +1,22 @@
+gene,variant,cancer_type,drug,target,evidence_level,note
+EGFR,L858R,肺腺癌,Osimertinib,EGFR,A,三代 EGFR-TKI，一线首选
+EGFR,L858R,肺腺癌,Erlotinib,EGFR,A,一代 EGFR-TKI
+EGFR,L858R,肺腺癌,Gefitinib,EGFR,A,一代 EGFR-TKI
+EGFR,T790M,肺腺癌,Osimertinib,EGFR,A,三代 EGFR-TKI 可克服 T790M 耐药
+EGFR,exon19del,肺腺癌,Osimertinib,EGFR,A,19 外显子缺失同为敏感突变
+ALK,EML4-ALK,肺腺癌,Alectinib,ALK,A,二代 ALK 抑制剂，颅内活性好
+ALK,EML4-ALK,肺腺癌,Crizotinib,ALK,A,一代 ALK 抑制剂
+ROS1,fusion,肺腺癌,Crizotinib,ROS1,B,ROS1 融合阳性可用
+KRAS,G12C,肺腺癌,Sotorasib,KRAS G12C,B,KRAS G12C 共价抑制剂
+KRAS,G12C,肺腺癌,Adagrasib,KRAS G12C,B,KRAS G12C 共价抑制剂
+BRAF,V600E,肺腺癌,Dabrafenib, BRAF,B,需联合 Trametinib 使用
+BRAF,V600E,肺腺癌,Trametinib,MEK,B,与 BRAF 抑制剂联用
+MET,exon14 skipping,肺腺癌,Capmatinib,MET,B,MET 14 外显子跳跃突变
+RET,fusion,肺腺癌,Selpercatinib,RET,B,选择性 RET 抑制剂
+ERBB2,amplification,乳腺癌,Trastuzumab,HER2,A,HER2 阳性乳腺癌标准治疗
+ERBB2,amplification,乳腺癌,Pertuzumab,HER2,A,常与曲妥珠单抗联用
+PIK3CA,H1047R,乳腺癌,Alpelisib,PIK3CA,B,需联合内分泌治疗
+BRCA1,truncating,乳腺癌,Olaparib,PARP,B,PARP 抑制剂，胚系突变
+BRCA2,truncating,乳腺癌,Olaparib,PARP,B,PARP 抑制剂
+TP53,R175H,肺腺癌,,,D,目前无直接靶向药物，属不良预后因素
+STK11,loss,肺腺癌,,,D,免疫治疗获益可能受限

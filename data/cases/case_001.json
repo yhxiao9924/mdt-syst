@@ -1,0 +1,13 @@
+{
+  "case_id": "CASE-001",
+  "cancer_type": "肺腺癌",
+  "stage": "IIIB",
+  "mutations": [
+    { "gene": "EGFR", "variant": "L858R", "vaf": 0.42 },
+    { "gene": "TP53", "variant": "R175H", "vaf": 0.31 },
+    { "gene": "STK11", "variant": "loss", "vaf": null }
+  ],
+  "pathology_text": "右肺上叶腺癌，中分化，腺泡型为主。免疫组化：TTF-1(+)，NapsinA(+)，PD-L1 TPS 15%。未见神经内分泌分化。",
+  "clinical_notes": "58 岁男性，非吸烟，因咳嗽伴少量咯血就诊，影像示右肺上叶占位 3.8cm，纵隔淋巴结转移。ECOG 评分 1 分，肝肾功能正常。",
+  "ground_truth_drugs": ["Osimertinib", "Erlotinib", "Gefitinib"]
+}
