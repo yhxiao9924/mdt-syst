@@ -32,9 +32,10 @@ def build_graph():
     g.add_edge("genomics", "drug")
     g.add_edge("drug", "literature")
 
-    # 两条支路在决策节点汇合（LangGraph 会等两个上游都完成）
-    g.add_edge("pathology", "decision")
-    g.add_edge("literature", "decision")
+    # 两条支路在决策节点汇合。
+    # 必须写成列表：分开写两条边时，decision 会分别被两个上游各触发一次，
+    # 导致决策 Agent 跑两遍（第一遍只有病理报告，白花一次 token）。
+    g.add_edge(["pathology", "literature"], "decision")
     g.add_edge("decision", END)
 
     return g.compile()
