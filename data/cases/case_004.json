@@ -1,0 +1,13 @@
+{
+  "case_id": "CASE-004",
+  "cancer_type": "肺腺癌",
+  "stage": "IIA",
+  "mutations": [
+    { "gene": "TP53", "variant": "R175H", "vaf": 0.45 },
+    { "gene": "STK11", "variant": "loss", "vaf": null },
+    { "gene": "KEAP1", "variant": "loss", "vaf": null }
+  ],
+  "pathology_text": "左上肺叶腺癌，中低分化，乳头型为主。免疫组化：TTF-1(+)，NapsinA(+)，PD-L1 TPS 1%。未见 EGFR/ALK/ROS1 变异。",
+  "clinical_notes": "63 岁男性，体检发现左上肺结节 2.6cm，PET-CT 未见远处转移，纵隔淋巴结阴性。ECOG 0 分。",
+  "ground_truth_drugs": []
+}

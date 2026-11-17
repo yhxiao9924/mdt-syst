@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE-010",
+  "cancer_type": "胰腺癌",
+  "stage": "III",
+  "mutations": [
+    { "gene": "KRAS", "variant": "G12D", "vaf": 0.41 },
+    { "gene": "TP53", "variant": "R175H", "vaf": 0.37 }
+  ],
+  "pathology_text": "胰头中低分化导管腺癌。免疫组化：CK7(+)，CK19(+)，CA19-9 阳性。未见 BRCA1/2 胚系致病突变。",
+  "clinical_notes": "65 岁女性，因上腹痛伴体重下降 8kg 就诊。CT 示胰头占位 3.5cm 包绕肠系膜上动脉，无法根治性切除。ECOG 1 分。",
+  "ground_truth_drugs": []
+}

@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE-006",
+  "cancer_type": "乳腺癌",
+  "stage": "IIIC",
+  "mutations": [
+    { "gene": "ERBB2", "variant": "amplification", "vaf": null },
+    { "gene": "PIK3CA", "variant": "H1047R", "vaf": 0.31 }
+  ],
+  "pathology_text": "左乳浸润性导管癌，II 级。免疫组化：ER 阴性，PR 阴性，HER2(3+)，Ki-67 45%。FISH 证实 HER2 基因扩增。",
+  "clinical_notes": "49 岁女性，发现左乳肿块 3 个月，伴腋窝淋巴结融合。ECOG 1 分，心脏射血分数 62%。",
+  "ground_truth_drugs": ["Trastuzumab", "Pertuzumab", "Trastuzumab emtansine", "Trastuzumab deruxtecan"]
+}

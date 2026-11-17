@@ -1,10 +1,28 @@
 """PubMed 文献检索工具（NCBI E-utilities，免费无需 key）。"""
 
+import time
+
 import requests
 
 ESEARCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 ESUMMARY = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
 TIMEOUT = 15
+RETRIES = 2
+
+
+def _get_json(url: str, params: dict) -> dict:
+    """带重试的 GET：NCBI 偶发超时，一次失败就放弃会让文献 Agent 静默失效。"""
+    last_error: Exception | None = None
+    for attempt in range(RETRIES):
+        try:
+            r = requests.get(url, params=params, timeout=TIMEOUT)
+            r.raise_for_status()
+            return r.json()
+        except Exception as exc:  # noqa: BLE001
+            last_error = exc
+            if attempt < RETRIES - 1:
+                time.sleep(1 + attempt)
+    raise last_error  # type: ignore[misc]
 
 
 def search_pubmed(query: str, max_results: int = 3) -> list[dict]:
@@ -15,29 +33,23 @@ def search_pubmed(query: str, max_results: int = 3) -> list[dict]:
         max_results: 返回条数，建议 1-5
     """
     try:
-        r = requests.get(
+        data = _get_json(
             ESEARCH,
-            params={
+            {
                 "db": "pubmed",
                 "term": query,
                 "retmode": "json",
                 "retmax": max_results,
                 "sort": "relevance",
             },
-            timeout=TIMEOUT,
         )
-        r.raise_for_status()
-        ids = r.json().get("esearchresult", {}).get("idlist", [])
+        ids = data.get("esearchresult", {}).get("idlist", [])
         if not ids:
             return [{"status": "not_found", "message": f"未检索到与 {query} 相关的文献"}]
 
-        s = requests.get(
-            ESUMMARY,
-            params={"db": "pubmed", "id": ",".join(ids), "retmode": "json"},
-            timeout=TIMEOUT,
-        )
-        s.raise_for_status()
-        result = s.json().get("result", {})
+        result = _get_json(
+            ESUMMARY, {"db": "pubmed", "id": ",".join(ids), "retmode": "json"}
+        ).get("result", {})
 
         papers = []
         for pmid in ids:

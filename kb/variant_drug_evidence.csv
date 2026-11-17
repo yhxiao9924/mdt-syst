@@ -2,21 +2,77 @@ gene,variant,cancer_type,drug,target,evidence_level,note
 EGFR,L858R,肺腺癌,Osimertinib,EGFR,A,三代 EGFR-TKI，一线首选
 EGFR,L858R,肺腺癌,Erlotinib,EGFR,A,一代 EGFR-TKI
 EGFR,L858R,肺腺癌,Gefitinib,EGFR,A,一代 EGFR-TKI
+EGFR,L858R,肺腺癌,Afatinib,EGFR,A,二代 EGFR-TKI
+EGFR,exon19del,肺腺癌,Osimertinib,EGFR,A,19 外显子缺失一线首选
+EGFR,exon19del,肺腺癌,Erlotinib,EGFR,A,一代 EGFR-TKI
+EGFR,exon19del,肺腺癌,Afatinib,EGFR,A,二代 EGFR-TKI
 EGFR,T790M,肺腺癌,Osimertinib,EGFR,A,三代 EGFR-TKI 可克服 T790M 耐药
-EGFR,exon19del,肺腺癌,Osimertinib,EGFR,A,19 外显子缺失同为敏感突变
+EGFR,exon20ins,肺腺癌,Amivantamab,EGFR/MET,B,EGFR-MET 双抗，针对 20 外显子插入
 ALK,EML4-ALK,肺腺癌,Alectinib,ALK,A,二代 ALK 抑制剂，颅内活性好
 ALK,EML4-ALK,肺腺癌,Crizotinib,ALK,A,一代 ALK 抑制剂
+ALK,EML4-ALK,肺腺癌,Lorlatinib,ALK,B,三代 ALK 抑制剂，耐药后可用
 ROS1,fusion,肺腺癌,Crizotinib,ROS1,B,ROS1 融合阳性可用
+ROS1,fusion,肺腺癌,Entrectinib,ROS1,B,ROS1 融合，颅内活性好
 KRAS,G12C,肺腺癌,Sotorasib,KRAS G12C,B,KRAS G12C 共价抑制剂
 KRAS,G12C,肺腺癌,Adagrasib,KRAS G12C,B,KRAS G12C 共价抑制剂
-BRAF,V600E,肺腺癌,Dabrafenib, BRAF,B,需联合 Trametinib 使用
-BRAF,V600E,肺腺癌,Trametinib,MEK,B,与 BRAF 抑制剂联用
 MET,exon14 skipping,肺腺癌,Capmatinib,MET,B,MET 14 外显子跳跃突变
+MET,exon14 skipping,肺腺癌,Tepotinib,MET,B,MET 14 外显子跳跃突变
 RET,fusion,肺腺癌,Selpercatinib,RET,B,选择性 RET 抑制剂
-ERBB2,amplification,乳腺癌,Trastuzumab,HER2,A,HER2 阳性乳腺癌标准治疗
-ERBB2,amplification,乳腺癌,Pertuzumab,HER2,A,常与曲妥珠单抗联用
-PIK3CA,H1047R,乳腺癌,Alpelisib,PIK3CA,B,需联合内分泌治疗
-BRCA1,truncating,乳腺癌,Olaparib,PARP,B,PARP 抑制剂，胚系突变
-BRCA2,truncating,乳腺癌,Olaparib,PARP,B,PARP 抑制剂
+RET,fusion,肺腺癌,Pralsetinib,RET,B,选择性 RET 抑制剂
+NTRK,fusion,肺腺癌,Larotrectinib,TRK,B,NTRK 融合，组织不可知
+NTRK,fusion,肺腺癌,Entrectinib,TRK,B,NTRK 融合，组织不可知
+BRAF,V600E,肺腺癌,Dabrafenib,BRAF,B,需联合曲美替尼使用
+BRAF,V600E,肺腺癌,Trametinib,MEK,B,与 BRAF 抑制剂联用
+ERBB2,exon20 insertion,肺腺癌,Trastuzumab deruxtecan,HER2,B,ADC 药物，HER2 突变型肺癌
 TP53,R175H,肺腺癌,,,D,目前无直接靶向药物，属不良预后因素
 STK11,loss,肺腺癌,,,D,免疫治疗获益可能受限
+KEAP1,loss,肺腺癌,,,D,与靶向及免疫治疗耐药相关
+KRAS,G12D,肺腺癌,,,D,目前无获批靶向药物
+ERBB2,amplification,乳腺癌,Trastuzumab,HER2,A,HER2 阳性乳腺癌标准治疗
+ERBB2,amplification,乳腺癌,Pertuzumab,HER2,A,常与曲妥珠单抗联用
+ERBB2,amplification,乳腺癌,Trastuzumab emtansine,HER2,B,二线 ADC 药物
+ERBB2,amplification,乳腺癌,Trastuzumab deruxtecan,HER2,B,ADC 药物，脑转移可用
+BRCA1,truncating,乳腺癌,Olaparib,PARP,A,胚系 BRCA 突变
+BRCA2,truncating,乳腺癌,Olaparib,PARP,A,胚系 BRCA 突变
+BRCA1,truncating,乳腺癌,Talazoparib,PARP,B,胚系 BRCA 突变
+PIK3CA,H1047R,乳腺癌,Alpelisib,PIK3CA,B,需联合内分泌治疗
+PIK3CA,E545K,乳腺癌,Alpelisib,PIK3CA,B,需联合内分泌治疗
+ESR1,mutation,乳腺癌,Elacestrant,ER,B,内分泌治疗耐药后可选用
+AKT1,E17K,乳腺癌,Capivasertib,AKT,B,需联合内分泌治疗
+TP53,R175H,乳腺癌,,,D,目前无直接靶向药物
+BRAF,V600E,结直肠癌,Encorafenib,BRAF,B,需联合西妥昔单抗
+BRAF,V600E,结直肠癌,Cetuximab,EGFR,B,与 BRAF 抑制剂联用
+KRAS,G12C,结直肠癌,Sotorasib,KRAS G12C,C,单药疗效有限，联合治疗探索中
+ERBB2,amplification,结直肠癌,Trastuzumab,HER2,B,需联合帕妥珠单抗
+ERBB2,amplification,结直肠癌,Pertuzumab,HER2,B,与曲妥珠单抗联用
+KRAS,G12D,结直肠癌,,,D,抗 EGFR 治疗耐药
+KRAS,G12V,结直肠癌,,,D,抗 EGFR 治疗耐药
+NRAS,Q61K,结直肠癌,,,D,抗 EGFR 治疗耐药
+TP53,R248Q,结直肠癌,,,D,目前无直接靶向药物
+BRAF,V600E,黑色素瘤,Dabrafenib,BRAF,A,与曲美替尼联用
+BRAF,V600E,黑色素瘤,Trametinib,MEK,A,与 BRAF 抑制剂联用
+BRAF,V600E,黑色素瘤,Vemurafenib,BRAF,A,一代 BRAF 抑制剂
+BRAF,V600E,黑色素瘤,Cobimetinib,MEK,A,与维莫非尼联用
+NRAS,Q61L,黑色素瘤,,,D,目前无获批靶向药物
+KIT,K642E,黑色素瘤,Imatinib,KIT,C,KIT 突变亚型可用
+ERBB2,amplification,胃癌,Trastuzumab,HER2,A,HER2 阳性一线治疗
+ERBB2,amplification,胃癌,Pembrolizumab,PD-1,A,联合曲妥珠单抗与化疗
+CLDN18.2,positive,胃癌,Zolbetuximab,CLDN18.2,B,CLDN18.2 阳性人群
+FGFR2,amplification,胃癌,Pemigatinib,FGFR2,C,后线探索性治疗
+BRCA1,truncating,卵巢癌,Olaparib,PARP,A,一线维持治疗
+BRCA2,truncating,卵巢癌,Olaparib,PARP,A,一线维持治疗
+BRCA1,truncating,卵巢癌,Niraparib,PARP,A,PARP 抑制剂维持治疗
+HRD,positive,卵巢癌,Niraparib,PARP,A,HRD 阳性维持治疗
+KIT,exon11,胃肠道间质瘤,Imatinib,KIT,A,一线标准治疗
+KIT,exon11,胃肠道间质瘤,Sunitinib,KIT,B,伊马替尼耐药后二线
+KIT,exon11,胃肠道间质瘤,Regorafenib,KIT,B,三线治疗
+PDGFRA,D842V,胃肠道间质瘤,Avapritinib,PDGFRA,A,PDGFRA D842V 专用抑制剂
+RET,fusion,甲状腺癌,Selpercatinib,RET,A,RET 融合型甲状腺癌
+BRAF,V600E,甲状腺癌,Dabrafenib,BRAF,B,与曲美替尼联用
+FGFR2,fusion,胆管癌,Pemigatinib,FGFR2,B,FGFR2 融合阳性
+FGFR2,fusion,胆管癌,Futibatinib,FGFR2,B,不可逆 FGFR 抑制剂
+IDH1,R132C,胆管癌,Ivosidenib,IDH1,B,IDH1 突变胆管癌
+BRCA2,truncating,胰腺癌,Olaparib,PARP,B,胚系 BRCA 突变维持治疗
+KRAS,G12D,胰腺癌,,,D,目前无获批靶向药物
+BRCA2,truncating,前列腺癌,Olaparib,PARP,B,转移性去势抵抗性前列腺癌
+BRCA1,truncating,前列腺癌,Olaparib,PARP,B,转移性去势抵抗性前列腺癌

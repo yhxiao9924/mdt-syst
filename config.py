@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 CASE_DIR = DATA_DIR / "cases"
 KB_DIR = BASE_DIR / "kb"
+KB_FILE = KB_DIR / "variant_drug_evidence.csv"
 
 # 模型配置
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")

@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE-007",
+  "cancer_type": "乳腺癌",
+  "stage": "IIB",
+  "mutations": [
+    { "gene": "BRCA1", "variant": "truncating", "vaf": 0.51 },
+    { "gene": "TP53", "variant": "R175H", "vaf": 0.44 }
+  ],
+  "pathology_text": "右乳浸润性导管癌，III 级，三阴性表型。免疫组化：ER 阴性，PR 阴性，HER2(1+)，Ki-67 70%。",
+  "clinical_notes": "38 岁女性，有乳腺癌家族史（母亲 45 岁发病）。已完成手术，拟行辅助治疗。ECOG 0 分。",
+  "ground_truth_drugs": ["Olaparib", "Talazoparib"]
+}

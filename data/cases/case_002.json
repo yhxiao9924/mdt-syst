@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE-002",
+  "cancer_type": "肺腺癌",
+  "stage": "IV",
+  "mutations": [
+    { "gene": "ALK", "variant": "EML4-ALK", "vaf": 0.38 },
+    { "gene": "TP53", "variant": "R175H", "vaf": 0.22 }
+  ],
+  "pathology_text": "左肺下叶腺癌，低分化，实体型为主。免疫组化：TTF-1(+)，NapsinA(+)，ALK Ventana D5F3(+)，PD-L1 TPS 40%。",
+  "clinical_notes": "42 岁女性，非吸烟，因胸闷伴头痛 2 个月就诊。头颅 MRI 见多发脑转移灶，最大 1.2cm。ECOG 1 分，无咯血。",
+  "ground_truth_drugs": ["Alectinib", "Crizotinib", "Lorlatinib"]
+}

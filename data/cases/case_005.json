@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE-005",
+  "cancer_type": "肺腺癌",
+  "stage": "IV",
+  "mutations": [
+    { "gene": "EGFR", "variant": "T790M", "vaf": 0.18 },
+    { "gene": "EGFR", "variant": "L858R", "vaf": 0.26 }
+  ],
+  "pathology_text": "右肺上叶腺癌，中分化。免疫组化：TTF-1(+)，NapsinA(+)。此为一代 EGFR-TKI 治疗 14 个月后进展的二次活检标本。",
+  "clinical_notes": "56 岁女性，非吸烟。既往吉非替尼治疗 14 个月后出现新发肝转移，复查基因检测提示 EGFR T790M 阳性。ECOG 1 分。",
+  "ground_truth_drugs": ["Osimertinib"]
+}

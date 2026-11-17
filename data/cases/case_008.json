@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE-008",
+  "cancer_type": "结直肠癌",
+  "stage": "IV",
+  "mutations": [
+    { "gene": "BRAF", "variant": "V600E", "vaf": 0.29 },
+    { "gene": "TP53", "variant": "R248Q", "vaf": 0.33 }
+  ],
+  "pathology_text": "升结肠中分化腺癌，浸润至浆膜层。免疫组化：CK20(+)，CDX2(+)，MLH1/PMS2/MSH2/MSH6 均阳性（pMMR）。",
+  "clinical_notes": "61 岁男性，因右下腹隐痛伴贫血就诊。CT 示升结肠占位伴肝多发转移。既往未接受抗肿瘤治疗。ECOG 1 分。",
+  "ground_truth_drugs": ["Encorafenib", "Cetuximab"]
+}

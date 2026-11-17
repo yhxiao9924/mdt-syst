@@ -1,0 +1,11 @@
+{
+  "case_id": "CASE-009",
+  "cancer_type": "黑色素瘤",
+  "stage": "IIIC",
+  "mutations": [
+    { "gene": "BRAF", "variant": "V600E", "vaf": 0.47 }
+  ],
+  "pathology_text": "左足底皮肤恶性黑色素瘤，结节型，Breslow 厚度 4.2mm，伴溃疡。免疫组化：S-100(+)，HMB-45(+)，Melan-A(+)。",
+  "clinical_notes": "54 岁男性，原发灶切除后 6 个月出现腹股沟多发淋巴结转移，已行淋巴结清扫。ECOG 0 分，LDH 正常。",
+  "ground_truth_drugs": ["Dabrafenib", "Trametinib", "Vemurafenib", "Cobimetinib"]
+}

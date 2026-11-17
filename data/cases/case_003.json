@@ -1,0 +1,13 @@
+{
+  "case_id": "CASE-003",
+  "cancer_type": "肺腺癌",
+  "stage": "IV",
+  "mutations": [
+    { "gene": "KRAS", "variant": "G12C", "vaf": 0.35 },
+    { "gene": "TP53", "variant": "R175H", "vaf": 0.28 },
+    { "gene": "STK11", "variant": "loss", "vaf": null }
+  ],
+  "pathology_text": "右肺中叶腺癌，中分化，贴壁型为主。免疫组化：TTF-1(+)，NapsinA(+)，PD-L1 TPS 5%。",
+  "clinical_notes": "67 岁男性，吸烟 40 包年，因体重下降伴干咳就诊。CT 示右肺占位 4.5cm 伴对侧肺转移。ECOG 2 分。",
+  "ground_truth_drugs": ["Sotorasib", "Adagrasib"]
+}
