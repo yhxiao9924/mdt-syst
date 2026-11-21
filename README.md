@@ -41,7 +41,6 @@ graph TD
 
 ```
 mdt-system/
-├── app.py                   # Streamlit 演示界面（唯一入口）
 ├── config.py                # 模型、路径、免责声明等全局配置
 ├── kb/
 │   └── variant_drug_evidence.csv   # 变异-药物-证据等级知识库
@@ -69,11 +68,24 @@ pip install -r requirements.txt
 # 2. 配置 API Key
 copy .env.example .env             # 然后填入 DEEPSEEK_API_KEY
 
-# 3. 网页演示
-streamlit run app.py
+# 3. 跑一份病例
+python evaluation/run_eval.py --case case_001 --groups full
 ```
 
-在侧边栏选择内置病例（或直接编辑 JSON），点击「开始会诊」，页面会实时显示 6 个 Agent 的执行过程，最后渲染结构化报告，并可下载 JSON。
+`--case` 按文件名关键字筛选病例，脚本会跑完整 6 个 Agent，把报告与指标写入 `outputs/`。
+
+若只想在 Python 里直接拿报告：
+
+```python
+import json
+from src.graph import build_graph
+
+case = json.load(open("data/cases/case_001.json", encoding="utf-8"))
+state = build_graph().invoke({"case": case, "trace": []})
+print(json.dumps(state["report"], ensure_ascii=False, indent=2))
+```
+
+`state["trace"]` 记录了 6 个 Agent 的逐步执行过程，可用于结果展示与调试。
 
 ## 评测
 
@@ -155,9 +167,8 @@ python evaluation/run_eval.py --groups full,baseline,no_lit --repeat 3
 
 | 成员 | 职责 |
 |---|---|
-| 组长 | 架构设计、LLM 接入与 Agent 循环、图编排、核心 Agent、评测设计 |
-| 成员 B | 数据管道：知识库构建、病例构造、工具封装（知识库查询、PubMed） |
-| 成员 C | 评测执行、Streamlit 前端、README 与汇报材料 |
+| 肖逸豪 | 核心开发：架构设计、LLM 接入与手写 Agent 循环、LangGraph 图编排、6 个 Agent 实现、知识库与 PubMed 工具封装、病例数据构造、评测方案设计 |
+| 林星橼 | 评测执行与结果数据整理、汇报 PPT 制作、汇报材料准备 |
 
 ## 数据来源
 
