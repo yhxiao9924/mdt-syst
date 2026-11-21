@@ -1,4 +1,4 @@
-"""所有 Agent 的 Prompt。统一放在一处便于对比调优。"""
+"""所有 Agent 的 Prompt"""
 
 COMMON_RULES = """
 通用铁律：

@@ -1,10 +1,4 @@
-"""LLM 调用封装。
-
-包含三层能力，学习顺序也是从下往上：
-1. chat           —— 最基础的对话
-2. chat_json      —— 强制模型输出 JSON，再用 Pydantic 校验
-3. run_agent      —— 手写的 Agent 循环（function calling）
-"""
+"""LLM 调用封装"""
 
 import json
 from typing import Any, Callable
@@ -40,10 +34,7 @@ def chat(messages: list[dict], json_mode: bool = False) -> str:
 
 
 def chat_json(messages: list[dict], schema: type[BaseModel]) -> BaseModel:
-    """让模型输出 JSON 并解析为 Pydantic 对象。
-
-    把 schema 的 JSON Schema 塞进 system prompt，是当前最稳的结构化输出做法。
-    """
+    """让模型输出 JSON 并解析为 Pydantic 对象"""
     schema_hint = json.dumps(schema.model_json_schema(), ensure_ascii=False)
     guided = [
         {
@@ -64,11 +55,7 @@ def run_agent(
     tool_map: dict[str, Callable[..., Any]],
     max_rounds: int = MAX_TOOL_ROUNDS,
 ) -> str:
-    """手写 Agent 循环：模型决定调用哪个工具 → 我们执行 → 把结果喂回去 → 再问。
-
-    `tools` 是 OpenAI function calling 的 schema 列表；
-    `tool_map` 是 {"工具名": 真实 Python 函数} 的映射。
-    """
+    """手写 Agent 循环"""
     messages: list[dict] = [
         {"role": "system", "content": system},
         {"role": "user", "content": user},
@@ -83,7 +70,7 @@ def run_agent(
         )
         msg = resp.choices[0].message
 
-        # 没有工具调用 → 模型给出了最终答案
+        # 没有工具调用
         if not msg.tool_calls:
             return msg.content or ""
 
@@ -112,7 +99,7 @@ def run_agent(
             try:
                 args = json.loads(tc.function.arguments or "{}")
                 result = fn(**args) if fn else {"error": f"未知工具 {tc.function.name}"}
-            except Exception as exc:  # 工具异常不能让整个流程崩掉
+            except Exception as exc: 
                 result = {"error": f"工具执行失败: {exc}"}
             messages.append(
                 {

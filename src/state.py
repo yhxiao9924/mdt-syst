@@ -1,9 +1,4 @@
-"""LangGraph 的全局状态定义。
-
-注意 `trace` 使用了 operator.add 作为 reducer：
-多个节点在同一步并行写入同一个 key 时，LangGraph 会用 reducer 合并，
-否则会直接报 InvalidUpdateError。这是多 Agent 并行最容易踩的坑。
-"""
+"""LangGraph 的全局状态定义"""
 
 import operator
 from typing import Annotated, TypedDict

@@ -5,12 +5,6 @@
     baseline  —— 单 Agent 基线：一个大 prompt 直接让模型看病例给结论，不用工具
     no_lit    —— 消融：多 Agent 但去掉文献 Agent
 
-用法：
-    python evaluation/run_eval.py                      # 跑全部病例，对比 full 和 baseline
-    python evaluation/run_eval.py --groups full,baseline,no_lit
-    python evaluation/run_eval.py --case case_001      # 只跑一份，快速验证
-
-结果保存在 outputs/ 下（json 明细 + csv 汇总），控制台打印对比表。
 """
 
 from __future__ import annotations

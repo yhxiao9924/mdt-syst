@@ -15,11 +15,7 @@ from src.state import MDTState
 
 
 def build_graph(enable_literature: bool = True):
-    """构建会诊图。
-
-    enable_literature=False 时跳过文献 Agent（drug 直接连 decision），
-    用于评测里的消融实验，正常使用保持默认值即可。
-    """
+    """构建会诊图"""
     g = StateGraph(MDTState)
 
     g.add_node("coordinator", coordinator_agent)
@@ -38,9 +34,6 @@ def build_graph(enable_literature: bool = True):
 
     if enable_literature:
         g.add_edge("drug", "literature")
-        # 两条支路在决策节点汇合。
-        # 必须写成列表：分开写两条边时，decision 会分别被两个上游各触发一次，
-        # 导致决策 Agent 跑两遍（第一遍只有病理报告，白花一次 token）。
         g.add_edge(["pathology", "literature"], "decision")
     else:
         # 消融实验：没有文献支路，基因组线完成后直接进决策
@@ -51,5 +44,4 @@ def build_graph(enable_literature: bool = True):
     return g.compile()
 
 
-# 思考题：如果某个病例没有任何可用药变异，
-# 怎么用 add_conditional_edges 让 genomics 直接跳到 decision？
+
